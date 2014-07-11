@@ -1,0 +1,25 @@
+<h1>Listing mails</h1>
+
+<table>
+  <tr>
+    <th>Subject</th>
+    <th>Body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @smails.each do |smail| %>
+  <tr>
+    <td><%= smail.subject %></td>
+    <td><%= smail.body %></td>
+    <td><%= link_to 'Show', smail %></td>
+    <td><%= link_to 'Edit', edit_smail_path(smail) %></td>
+    <td><%= link_to 'Destroy', smail, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mail', new_smail_path %>

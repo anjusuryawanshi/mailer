@@ -1,0 +1,2 @@
+module SmailsHelper
+end

@@ -1,5 +1,5 @@
 Temp::Application.routes.draw do
-  resources :mails
+  resources :smails
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

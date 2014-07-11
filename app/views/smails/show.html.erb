@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Subject:</b>
+  <%= @smail.subject %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @smail.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_smail_path(@smail) %> |
+<%= link_to 'Back', smails_path %>

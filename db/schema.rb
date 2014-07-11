@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20140711180818) do
 
-  create_table "mails", :force => true do |t|
+  create_table "smails", :force => true do |t|
     t.string   "subject"
     t.text     "body"
     t.datetime "created_at"
