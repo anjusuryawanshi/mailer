@@ -1,83 +1,42 @@
 class MailsController < ApplicationController
-  # GET /mails
-  # GET /mails.json
+
+  respond_to :json
+
   def index
     @mails = Mail.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @mails }
-    end
+    respond_with @mails
   end
 
-  # GET /mails/1
-  # GET /mails/1.json
   def show
     @mail = Mail.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @mail }
-    end
+    respond_with @mail
   end
 
-  # GET /mails/new
-  # GET /mails/new.json
   def new
     @mail = Mail.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @mail }
-    end
+    respond_with @mail
   end
 
-  # GET /mails/1/edit
   def edit
     @mail = Mail.find(params[:id])
+    respond_with @mail
   end
 
-  # POST /mails
-  # POST /mails.json
   def create
     @mail = Mail.new(params[:mail])
-
-    respond_to do |format|
-      if @mail.save
-        format.html { redirect_to @mail, notice: 'Mail was successfully created.' }
-        format.json { render json: @mail, status: :created, location: @mail }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @mail.errors, status: :unprocessable_entity }
-      end
+    if @mail.save
+      respond_with @mail
     end
   end
 
-  # PUT /mails/1
-  # PUT /mails/1.json
   def update
     @mail = Mail.find(params[:id])
-
-    respond_to do |format|
-      if @mail.update_attributes(params[:mail])
-        format.html { redirect_to @mail, notice: 'Mail was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @mail.errors, status: :unprocessable_entity }
-      end
-    end
+    respond_with @mail
   end
 
-  # DELETE /mails/1
-  # DELETE /mails/1.json
   def destroy
     @mail = Mail.find(params[:id])
     @mail.destroy
-
-    respond_to do |format|
-      format.html { redirect_to mails_url }
-      format.json { head :ok }
-    end
+    respond_with @mail
   end
 end
