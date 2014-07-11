@@ -2,20 +2,6 @@ class MailsController < ApplicationController
 
   respond_to :json
 
-  def to_format
-    return render unless resource.respond_to?(:"to_#{format}")
-
-    if get?
-      render format => resource
-    elsif has_errors?
-      render format => resource.errors, :status => :unprocessable_entity
-    elsif post?
-      render format => resource, :status => :created, :location => resource
-    else
-      head :ok
-    end
-  end
-
   def index
     @mails = Mail.all
     respond_with @mails
@@ -39,7 +25,7 @@ class MailsController < ApplicationController
   def create
     @mail = Mail.new(params[:mail])
     flash[:notice] = "Your email message was created successfully." if @mail.save
-    respond_with(@user, :location => "mails/#{@mail.id}.#{params[:format]}")
+    respond_with(@mail)
   end
 
   def update
