@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Sendmail::Application.config.secret_token = '7a5ce08893ea2f1a4c11cf3d0d373c085c9cc0e1742900c69c9b28530ba4ec33c0a7da500cb4f1d65a648e2f13a44ec069a11c002652cd9d6219b2f6d9bba07a'
+Temp::Application.config.secret_token = '4db6ba41a24d9ceef943c1b976dfe6eb28ca7d591c127360cde5de5f975721f788f24703f43f93803a06d3b56cc09c50dfa85a1d0e7bd8ba05d916616962d07b'

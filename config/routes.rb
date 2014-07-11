@@ -1,9 +1,5 @@
-Sendmail::Application.routes.draw do
-  get "mail/index"
-
-  match '/mail', :controller => 'mail', :action => 'index'
-
-  root to: 'mail#index'
+Temp::Application.routes.draw do
+  resources :mails
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

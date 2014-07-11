@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Sendmail::Application.load_tasks
+Temp::Application.load_tasks

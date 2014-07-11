@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140711154834) do
+ActiveRecord::Schema.define(:version => 20140711180818) do
 
   create_table "mails", :force => true do |t|
     t.string   "subject"
