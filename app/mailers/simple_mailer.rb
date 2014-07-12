@@ -1,5 +1,5 @@
 class SimpleMailer < ActionMailer::Base
-  default from: "no-reply@mailer.com"
+  default from: "\"Mailer Daemon\" <no-reply@example.com>"
 
   def simple_email(smail)
     @simple_body = smail.body
