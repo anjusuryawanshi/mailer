@@ -23,9 +23,13 @@ class SmailsController < ApplicationController
 
   def create
     @smail = Smail.new(params[:mail])
-    flash[:notice] = "Your email message was created successfully." if @smail.save
-    SimpleMailer.welcome_email.deliver
-    respond_with(@smail)
+    if @smail.save
+      flash[:notice] = 'Your email message was created successfully.'
+      SimpleMailer.welcome_email.deliver
+      respond_with(@smail, :status => :created, :location => @smail)
+    else
+      respond_with(@smail.errors, :status => :unprocessable_entity)
+    end
   end
 
   def update
