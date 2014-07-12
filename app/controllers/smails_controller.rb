@@ -1,5 +1,4 @@
 class SmailsController < ApplicationController
-
   respond_to :json
 
   def index
@@ -8,35 +7,35 @@ class SmailsController < ApplicationController
   end
 
   def show
-    @smails = Smail.find(params[:id])
-    respond_with @smails
+    @smail = Smail.find(params[:id])
+    respond_with @smail
   end
 
   def new
-    @smails = Smail.new
-    respond_with @smails
+    @smail = Smail.new
+    respond_with @smail
   end
 
   def edit
-    @smails = Smail.find(params[:id])
-    respond_with @smails
+    @smail = Smail.find(params[:id])
+    respond_with @smail
   end
 
   def create
-    @smails = Smail.new(params[:mail])
-    flash[:notice] = "Your email message was created successfully." if @smails.save
+    @smail = Smail.new(params[:mail])
+    flash[:notice] = "Your email message was created successfully." if @smail.save
     SimpleMailer.welcome_email.deliver
-    respond_with(@smails)
+    respond_with(@smail)
   end
 
   def update
-    @smails = Smail.find(params[:id])
-    respond_with @smails
+    @smail = Smail.find(params[:id])
+    respond_with @smail
   end
 
   def destroy
-    @smails = Smail.find(params[:id])
-    @smails.destroy
-    respond_with @smails
+    @smail = Smail.find(params[:id])
+    @smail.destroy
+    respond_with @smail
   end
 end
