@@ -34,3 +34,6 @@ group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
 end
+
+gem 'roadie', '3.0.0'
+gem 'roadie-rails', '1.0.2'
