@@ -1,5 +1,5 @@
 class SmailsController < ApplicationController
-  respond_to :json
+  respond_to :json, :html
 
   def index
     @smails = Smail.all
