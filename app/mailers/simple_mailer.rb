@@ -1,8 +1,8 @@
 class SimpleMailer < ActionMailer::Base
-  default from: "no-reply@example.com"
+  default from: "no-reply@mailer.com"
 
-  def welcome_email()
-    @url = 'http://example.com/login'
-    mail(to: 'anshul.verma86@gmail.com', subject: 'Welcome to my awesome site')
+  def simple_email(smail)
+    @simple_body = smail.body
+    mail(to: smail.to, subject: smail.subject)
   end
 end
