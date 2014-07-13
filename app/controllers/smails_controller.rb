@@ -16,11 +16,6 @@ class SmailsController < ApplicationController
     respond_with @smail
   end
 
-  def edit
-    @smail = Smail.find(params[:id])
-    respond_with @smail
-  end
-
   def create
     @smail = Smail.new(params[:mail])
     if @smail.save
@@ -30,16 +25,5 @@ class SmailsController < ApplicationController
     else
       respond_with(@smail.errors, :status => :unprocessable_entity)
     end
-  end
-
-  def update
-    @smail = Smail.find(params[:id])
-    respond_with @smail
-  end
-
-  def destroy
-    @smail = Smail.find(params[:id])
-    @smail.destroy
-    respond_with @smail
   end
 end
