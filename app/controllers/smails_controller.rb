@@ -11,11 +11,6 @@ class SmailsController < ApplicationController
     respond_with @smail
   end
 
-  def new
-    @smail = Smail.new
-    respond_with @smail
-  end
-
   def create
     @smail = Smail.new(params[:mail])
     if @smail.save
