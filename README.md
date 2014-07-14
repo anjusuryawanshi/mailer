@@ -1,6 +1,8 @@
 simple-mailer
 ======
 
+[![Build Status](https://travis-ci.org/anjusuryawanshi/mailer.svg?branch=master)](https://travis-ci.org/anjusuryawanshi/mailer)
+
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc/generate-toc again -->
 **Table of Contents**
 
